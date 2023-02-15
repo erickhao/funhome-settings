@@ -1,0 +1,16 @@
+This program is provided under a mix of the following licenses:
+
+        SPDX-License-Identifier: GPL-2.0-only
+        SPDX-License-Identifier: GPL-2.0-or-later
+
+Being under the terms of the GNU General Public License version 2 only, or
+the GNU General Public License version 2 or later. Licensing varies by
+individual file. Check each file for specifics.
+
+Copies of the licenses are available in:
+
+         LICENSES/GPL-2.0-only.txt
+         LICENSES/GPL-2.0-or-later.txt
+
+Unless expressly stated otherwise, all code submitted to the project is
+licensed under GPL-2.0-only, and copyright is donated to the project.

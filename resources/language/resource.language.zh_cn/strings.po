@@ -1,0 +1,1458 @@
+# Kodi Media Center language file
+# Addon Name: @DISTRONAME@ Configuration
+# Addon id: service.funhometv.settings
+# Addon Provider: FunHomeTV
+# Translators:
+# David Vukovic <davu@kodi.tv>, 2019
+# Dongkai Xie, 2018
+# Meano Lee <meanocat@gmail.com>, 2021
+# Namerp, 2018
+# Yan Zhu <tianmotrue@163.com>, 2018
+# Eric Hao <e.hao@aol.com> 2019-2023
+msgid ""
+msgstr ""
+"Project-Id-Version: LibreELEC Settings Add-on\n"
+"PO-Revision-Date: 2021-10-18 04:30+0000\n"
+"Last-Translator: taxigps <taxigps@sina.com>\n"
+"Language-Team: Chinese (China) <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/zh_cn/>\n"
+"Language: zh_cn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.8\n"
+
+msgctxt "#600"
+msgid "@DISTRONAME@ Settings"
+msgstr "@DISTRONAME@ 设置"
+
+msgctxt "#601"
+msgid "Interface"
+msgstr "界面"
+
+msgctxt "#602"
+msgid "Address"
+msgstr "地址"
+
+msgctxt "#603"
+msgid "Type"
+msgstr "类型"
+
+msgctxt "#604"
+msgid "State"
+msgstr "状态"
+
+msgctxt "#605"
+msgid "Address"
+msgstr "地址"
+
+msgctxt "#606"
+msgid "Distribution: "
+msgstr "分配： "
+
+msgctxt "#607"
+msgid "Version: "
+msgstr "版本： "
+
+msgctxt "#608"
+msgid "Architecture: "
+msgstr "硬件结构： "
+
+msgctxt "#609"
+msgid "FunHomeTV is forked from LibreELEC which created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
+msgstr "FunHomeTV由LibreELEC分叉而来，LibreELEC是由Linux和Kodi爱好者组成的全球团队创建，他们为管理项目，编写代码和提供支持贡献时间和精力。我们玩得很开心。我们希望您玩得开心！"
+
+msgctxt "#610"
+msgid "[B]Support[/B] is provided via our forum(English): https://forum.libreelec.tv[CR]Chinese Forum: https://znds.com/forum look for or post about FunHomeTV . [CR][CR][B]Documentation[/B] can be read in our wiki: https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub: https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via PayPal: donations@libreelec.tv"
+msgstr "[B]支持[/B]通过我们的论坛提供（for English）：https://forum.libreelec.tv  [CR][B]中文论坛[/B]： https://www.znds.com/forum.php  中“其他品牌盒子” 栏目里， 发布或者寻找关于 FunHomeTV 的 帖子即可。  [CR][CR][B]文档[/B]可在我们的维基中阅读： https://libreelec.wiki[CR][CR][B]代码[/B]可以在GitHub上找到： https://github.com/LibreELEC[CR][CR][B]捐款[/B]通过PayPal接受项目费用：  donations@libreelec.tv"
+
+msgctxt "#700"
+msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
+msgstr "配置主机名，键盘类型，执行重置，更新或备份和恢复"
+
+msgctxt "#701"
+msgid "Configure network startup options, NTP and VPNs"
+msgstr "配置网络启动选项，NTP和VPN"
+
+msgctxt "#702"
+msgid "Manage the Ethernet, Wireless and VPN connections available to the system"
+msgstr "管理系统可用的以太网，无线和VPN连接"
+
+msgctxt "#703"
+msgid "Configure system services like Nextcloud , Zerotier One , SSH , Cron , Avahi ,Samba  and  Transmission"
+msgstr "配置来云（Nextcloud）,零层网络（Zerotier One），SSH， Cron，Avahi, Samba，和 Transmission BT等系统服务"
+
+msgctxt "#704"
+msgid "Configure and pair Bluetooth devices"
+msgstr "配置和配对蓝牙设备"
+
+msgctxt "#705"
+msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
+msgstr "有用的信息，如版本和体系结构详细信息，支持和文档链接，以及如何捐赠和支持项目。"
+
+msgctxt "#707"
+msgid "Configure updates"
+msgstr "配置更新源"
+
+msgctxt "#710"
+msgid ""
+"Configure the Hostname of your @DISTRONAME@ system. This will be used for the nextcloud or transmisson , the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder .It will be a registed name in DNS."
+msgstr "配置@DISTRONAME@ 系统的主机名。 这将用于来云服务（nextcloud）的服务器名称和transmission的服务器名称 , 这将用于Windows中的HTPC \\\\主机名和Mac OS Finder中的SMB服务器名称。这将会是一个在DNS中注册的名字。"
+
+msgctxt "#711"
+msgid "Configure the 1st keyboard software layout"
+msgstr "配置第1个键盘软件布局"
+
+msgctxt "#712"
+msgid "Configure the 2nd keyboard software layout"
+msgstr "配置第2个键盘软件布局"
+
+msgctxt "#713"
+msgid "Configure the physical keyboard type"
+msgstr "配置物理键盘类型"
+
+msgctxt "#714"
+msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
+msgstr "@DISTRONAME@ 可以配置为自动或手动更新。 自动更新可用于稳定版本和稳定版本候选版本。 自动更新在测试版和开发版本上自行禁用"
+
+msgctxt "#715"
+msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
+msgstr "设置为开启，当新的更新可用时，将在屏幕上显示通知"
+
+msgctxt "#718"
+msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
+msgstr "将启动配置文件从/flash， kodi.log，内核日志和Samba配置发送到http://ix.io，并显示短URL"
+
+msgctxt "#719"
+msgid "Send boot config files from /flash, kodi_crash.log, kernel log and Samba configs to http://ix.io, and display the short URL"
+msgstr "将启动配置文件从/flash，kodi_crash.log，内核日志和Samba配置发送到http://ix.io，并显示短URL"
+
+msgctxt "#720"
+msgid "Set to ON to enable the Bluetooth service"
+msgstr "设为开以使能蓝牙服务"
+
+msgctxt "#722"
+msgid "Create a tar archive containing all @DISTRONAME@ and Kodi configuration settings, databases and thumbnail content. Backup files will be stored in /storage/backup/"
+msgstr "创建一个包含所有@DISTRONAME@和Kodi配置设置，数据库和缩略图内容的tar归档文件。 备份文件将存储在/storage/backup/中"
+
+msgctxt "#723"
+msgid "Restore a tar archive backup previously created using the backup option above"
+msgstr "恢复先前使用上述备份选项创建的tar归档备份"
+
+msgctxt "#724"
+msgid ""
+"[COLOR FF00FF00]SOFT RESET[/COLOR]\n"
+"Permanently reset @DISTRONAME@ configuration to defaults (resets also Kodi to default including your library. your media - music/videos/etc are not touched)"
+msgstr ""
+"[COLOR FF00FF00]软重置[/COLOR]\n"
+"将@DISTRONAME@配置永久重置为默认值（也可将Kodi重置为默认值，包括您的媒体库，而不会触及媒体 - 音乐/视频等）"
+
+msgctxt "#725"
+msgid ""
+"[COLOR FFFF0000]HARD RESET[/COLOR]\n"
+"Permanently reset @DISTRONAME@ and Kodi configuration to defaults (everything in your storage partition will be deleted)"
+msgstr ""
+"[COLOR FFFF0000]硬重置[/COLOR]\n"
+"将@DISTRONAME@和Kodi配置永久重置为默认值（存储分区中的所有内容都将被删除）"
+
+msgctxt "#726"
+msgid "Enable or disable support for Wireless (WLAN) networks"
+msgstr "启用或禁用对无线（WLAN）网络的支持"
+
+msgctxt "#727"
+msgid ""
+"Enable a 'tethered' Wireless Access Point. This requires your wireless card "
+"(and driver) to support bridging and access point mode. Not all cards are "
+"capable."
+msgstr "启用“联接线”无线接入点。 这要求您的无线网卡（和驱动程序）支持桥接和接入点模式。 并非所有的卡都可以。"
+
+msgctxt "#728"
+msgid "Configure the Access Point SSID"
+msgstr "配置接入点SSID"
+
+msgctxt "#729"
+msgid "Configure the Access Point Passphrase"
+msgstr "配置接入点密码"
+
+msgctxt "#730"
+msgid "Enable or disable support for Wired (Ethernet) networks"
+msgstr "启用或禁用对有线（以太网）网络的支持"
+
+msgctxt "#732"
+msgid "Configure the 1st time (NTP) server"
+msgstr "配置第1个（NTP）服务器"
+
+msgctxt "#733"
+msgid "Configure the 2nd time (NTP) server"
+msgstr "配置第2个（NTP）服务器"
+
+msgctxt "#734"
+msgid "Configure the 3rd time (NTP) server"
+msgstr "配置第3个（NTP）服务器"
+
+msgctxt "#736"
+msgid "Set to ON to delay Kodi startup until the network is available. Use this if the OS is booting into Kodi before the network is up and central MySQL databases are accessible."
+msgstr "设置为ON可延迟Kodi启动，直到网络可用。 如果在网络启动之前操作系统启动到Kodi并且可以访问中央MySQL数据库，请使用此选项。"
+
+msgctxt "#737"
+msgid "Time in seconds to wait for an established network connection."
+msgstr "等待已建立的网络连接的时间（以秒为单位）。"
+
+msgctxt "#738"
+msgid "Set to ON to enable the embedded Samba (SMB) filesharing service"
+msgstr "设置为ON以启用嵌入式Samba（SMB）文件共享服务"
+
+msgctxt "#739"
+msgid "Set to ON to require username/password access to local Samba fileshares"
+msgstr "设置为ON以要求用户名/密码访问本地Samba文件共享"
+
+msgctxt "#740"
+msgid "Set the username for Samba sharing"
+msgstr "设置Samba共享的用户名"
+
+msgctxt "#741"
+msgid "Set the password for Samba sharing"
+msgstr "设置Samba共享的密码"
+
+msgctxt "#742"
+msgid "Set to ON to enable the embedded SSH server. The SSH console can be accessed with username 'root' and password '@ROOT_PASSWORD@'."
+msgstr "设置为ON以启用嵌入式SSH服务器。 SSH控制台可以使用用户名'root'和密码'@ROOT_PASSWORD@'访问。"
+
+msgctxt "#743"
+msgid "Set to ON if you have copied private SSH keys to your HTPC and would like to improve security by disabling SSH username and password authentication."
+msgstr "如果您已将专用SSH密钥复制到您的HTPC并希望通过禁用SSH用户名和密码身份验证来提高安全性，请将其设置为ON。"
+
+msgctxt "#744"
+msgid "Set to ON to enable the Avahi (Zeroconf/Bonjour) network discovery service"
+msgstr "设置为ON以启用Avahi（Zeroconf / Bonjour）网络发现服务"
+
+msgctxt "#745"
+msgid "Set to ON to enable the cron daemon"
+msgstr "设置为ON以启用cron守护进程"
+
+msgctxt "#746"
+msgid "Set the password for SSH"
+msgstr "为SSH设定密码"
+
+msgctxt "#747"
+msgid "Enable a PIN for @DISTRONAME@ Settings access"
+msgstr "使能访问 @DISTRONAME@ 设置的 PIN 码"
+
+msgctxt "#748"
+msgid "Change the PIN Lock for @DISTRONAME@ Settings access"
+msgstr "修改访问 @DISTRONAME@ 设置的 PIN 码"
+
+msgctxt "#749"
+msgid "Overrride the Wireless Regulatory Domain so radio properties (channels and transmit power) comply with local laws or match the country configuration of your router."
+msgstr "覆盖无线监管领域，使无线电属性（频道和发射功率）符合当地法律或与路由器的国家/地区配置相匹配。"
+
+msgctxt "#750"
+msgid "750"
+msgstr "750"
+
+msgctxt "#751"
+msgid "With OBEX filetransfer you can send files, for example movies or pictures over bluetooth to @DISTRONAME@."
+msgstr "借助OBEX文件传输，您可以将文件（例如电影或图片）通过蓝牙发送至@DISTRONAME@。"
+
+msgctxt "#752"
+msgid "Here you can set the folder location where OBEX file transfer should store incoming files"
+msgstr "在这里您可以设置OBEX文件传输应该存储传入文件的文件夹位置"
+
+msgctxt "#753"
+msgid "Configure the 1st keyboard software Variant"
+msgstr "配置第1个键盘软件变种"
+
+msgctxt "#754"
+msgid "Configure the 2nd keyboard software Variant"
+msgstr "配置第2个键盘软件变种"
+
+msgctxt "#755"
+msgid "Auto share external drives / partitions"
+msgstr "自动共享外部驱动器/分区"
+
+msgctxt "#756"
+msgid "Disable older SMB protocols by specifying the minimum supported protocol."
+msgstr "通过指定最低支持的协议来禁用旧的SMB协议。"
+
+msgctxt "#757"
+msgid "Disable more recent SMB protocols for backward compatability with legacy clients."
+msgstr "禁用更新的SMB协议以实现与旧客户端的向后兼容。"
+
+msgctxt "#758"
+msgid "NetBIOS group to which the server belongs. Default is WORKGROUP."
+msgstr "服务器所属的NetBIOS组。 默认是WORKGROUP。"
+
+msgctxt "#760"
+msgid "Select an update channel"
+msgstr "选择一个更新渠道"
+
+msgctxt "#761"
+msgid "Enable to allow entering a custom update url"
+msgstr "启用以允许输入自定义更新网址"
+
+msgctxt "#762"
+msgid "Enter a custom update url (url should be the root of the update files)"
+msgstr "输入自定义更新url（url应该是更新文件的根目录）"
+
+msgctxt "#770"
+msgid "Select an available version"
+msgstr "选择一个可用的版本"
+
+msgctxt "#771"
+msgid "The firewall blocks unwanted network traffic. Home (default) allows traffic from private network ranges (192.168.x.x, 172.16.x.x and 10.x.x.x) only. Public blocks all traffic from all networks. Custom uses rules in /storage/.config/iptables. Off disables the firewall."
+msgstr "防火墙阻止不需要的网络流量。 主页（默认）仅允许来自专用网络范围（192.168.x.x，172.16.x.x和10.x.x.x）的流量。 公共阻止来自所有网络的所有流量。 自定义使用/storage/.config/iptables中的规则。 关闭将禁用防火墙。"
+
+msgctxt "#772"
+msgid "Checking for a new version will submit the installed Distribution, Project, CPU Arch and Version to the update server. This data is also used to report basic statistics for the project. To continue checking for updates while opting-out of stats reporting, disable this option."
+msgstr "检查新版本会将已安装的分发，项目，CPU Arch和版本提交给更新服务器。此数据还用于报告项目的基本统计信息。要在选择退出统计信息报告时继续检查更新，请禁用此选项。"
+
+msgctxt "#773"
+msgid "Set the idle timeout (in minutes) before devices will be disconnected (defaults to 0 for no timeout). Applies to devices where \"Enable Standby\" has been activated in the LibreELEC device connection context menu."
+msgstr "在断开设备之前设置空闲超时（分钟，默认为0表示无超时）。适用于已在 LibreELEC 设备连接上下文菜单中激活“启用待机”的设备。"
+
+msgctxt "#970"
+msgid "Set to ON to enable the nextcloud needed mariadb/apache2/php-fpm daemon, and to setup or access it by http://[System Name]; if disabled , users will not able to access the nextcloud service."
+msgstr "开启用于 Nextcloud 的服务，并且通过 http://[系统名称] 来设置或访问（系统名称可以通过菜单 '系统'-> '系统名称'来设置）； 如果关闭这服务，用户将不能通过网络访问在这台机器上的Nextcloud云服务。"
+
+msgctxt "#971"
+msgid "Set to ON to enable the apache2 httpd daemon for nextcloud.Access it by https://[the-box-ip]"
+msgstr "开启用于 Nextcloud 的 阿帕齐 网页服务进程 httpd 。通过 https://[这个盒子的ip地址] 访问。"
+
+msgctxt "#32672"
+msgid "Set to ON to enable the Zerotier One daemon. If the System enabled Zerotier Network , You can access it anywhere with internet on mobile or PC when your zerotier one network connected. Otherwise , you can only access it with local network."
+msgstr "开启 Zerotier One 服务。通过Zerotier One互联网建立您的私有定制网络。如果系统启用了零层网络，您就可以在任何地方，接入互联网的零层网络连接后的手机或电脑上，访问这台机器。否则（没有启用零层网络），您只可以在本地网络访问这台机器。"
+
+msgctxt "#973"
+msgid "Set to ON to enable the TransmissionBT daemon.In Android Phone, Download Tremotesf App(Or other TransmissionBT client) , and use it to control the Box IP and Port 9091"
+msgstr "开启 BitTorrent 传输服务。您可以通过“手机客户端/PC浏览器”控制其传输。安卓手机下载Tremotesf （或其他TransmissionBT 控制的客户端）应用，访问 这个盒子的‘系统名称’或‘ip地址’ ,端口号:9091"
+
+msgctxt "#975"
+msgid "Display Current Zerotier Network Type. 'Private' is more safe than 'Public' , 'Private' is recommended. Use 'Public' zerotier one Network type , RISK AT YOUR OWN , You ARE WARNED."
+msgstr "显示当前Zerotier定制网络的类型。‘Private(私人)’网络比‘Public(公开)’更安全，推荐使用‘Private(私人)’网络。使用‘Public(公开)’网络的责任风险自负。您已经被告知了。"
+
+msgctxt "#977"
+msgid "Input the private network id of zerotier one，like '8056face0123abcd',totally 16 chars."
+msgstr "输入定制网络的网络标识，也就是象‘8056face0123abcd’这样的一组字符，共16个。"
+
+msgctxt "#978"
+msgid "Current Zerotier Network Status.First start it in None (need to join a network) status;After Join a Network(after User input the network ID), it in REQUESTING_CONFIGURATION / ACCESS DENYED status, Wait User to accept the node in zerotier control panel(at  https://my.zerotier.com); After User accept the node in zerotier control panel, it in Connected state. If User want the node to leave the network , please select 'Leave the Network' under the item."
+msgstr "显示当前定制网络的状态。首先启动时状态应该是“无（NONE）”的状态；在加入网络后（输入网络标识后），就会进入“请求配置或访问拒绝（REQUESTING_CONFIGURATION / ACCESS DENYED）”状态，等待用户在zerotier定制网络的控制面板（在 https://my.zerotier.com 这个网址上）中接受这个节点接入；用户在在控制面板中接受后，节点就会进入连接的状态。如果用户想要离开定制的网络，请选择下面“离开网络”的选项。"
+
+msgctxt "#32979" 
+msgid "Leave the Zerotier Network"
+msgstr "离开定制网络"
+
+msgctxt "#32980"
+msgid "Current got Zerotier Network assigned IPv4 addresses."
+msgstr "当前获取的零层定制网络赋予的IPv4地址。"
+
+msgctxt "#32001"
+msgid "Services"
+msgstr "服务"
+
+msgctxt "#32002"
+msgid "System"
+msgstr "系统"
+
+msgctxt "#32003"
+msgid "Interface"
+msgstr "界面"
+
+msgctxt "#32005"
+msgid "Updates"
+msgstr "更新"
+
+msgctxt "#32009"
+msgid "Keyboard"
+msgstr "键盘"
+
+msgctxt "#32010"
+msgid "Keyboard Layout"
+msgstr "键盘布局"
+
+msgctxt "#32012"
+msgid "Select Action"
+msgstr "选择操作"
+
+msgctxt "#32013"
+msgid "OS Updates"
+msgstr "系统更新"
+
+msgctxt "#32014"
+msgid "Automatic Updates"
+msgstr "自动升级"
+
+msgctxt "#32015"
+msgid "Update Channel"
+msgstr "升级渠道"
+
+msgctxt "#32016"
+msgid "Show Custom Channels"
+msgstr "显示自定义渠道"
+
+msgctxt "#32017"
+msgid "  - Custom Channel 1"
+msgstr "  - 自定义渠道 1"
+
+msgctxt "#32018"
+msgid "  - Custom Channel 2"
+msgstr "  - 自定义渠道 2"
+
+msgctxt "#32019"
+msgid "  - Custom Channel 3"
+msgstr "  - 自定义渠道 3"
+
+msgctxt "#32020"
+msgid "Available Versions"
+msgstr "可用版本"
+
+msgctxt "#32021"
+msgid "Submit Statistics"
+msgstr "提交系统统计信息"
+
+msgctxt "#32022"
+msgid "Firmware Updates"
+msgstr "固件升级"
+
+msgctxt "#32023"
+msgid "Updating will occur once the system is rebooted."
+msgstr "将在系统重启时更新。"
+
+msgctxt "#32024"
+msgid "Bootloader EEPROM"
+msgstr "EEPROM 引导加载程序"
+
+msgctxt "#32025"
+msgid "Update the Raspberry Pi Bootloader EEPROM to the latest version. This option is automatically disabled after rebooting. Reboot the system to apply the update."
+msgstr "更新树莓派 Bootloader EEPROM 到最新版本。此选项将再重启后自动禁用。重启系统以应用此更新。"
+
+msgctxt "#32026"
+msgid "VIA USB3 Firmware"
+msgstr "VIA USB3 固件"
+
+msgctxt "#32027"
+msgid "Update the Raspberry Pi VIA USB3 firmware to the latest version. This option is automatically disabled after rebooting. Reboot the system to apply the update."
+msgstr "更新树莓派 VIA USB3 固件到最新版本。此选项将再重启后自动禁用。重启系统以应用此更新。"
+
+msgctxt "#32028"
+msgid "update from %s to %s"
+msgstr "从 %s 更新到 %s"
+
+msgctxt "#32029"
+msgid "up to date: %s"
+msgstr "更新到: %s"
+
+msgctxt "#32100"
+msgid "Connections"
+msgstr "连接"
+
+msgctxt "#32101"
+msgid "Network"
+msgstr "网络"
+
+msgctxt "#32102"
+msgid "Wireless Networks"
+msgstr "无线网络"
+
+msgctxt "#32103"
+msgid "Wired Networks"
+msgstr "有线网络"
+
+msgctxt "#32105"
+msgid "Active"
+msgstr "激活"
+
+msgctxt "#32106"
+msgid "Username"
+msgstr "用户名"
+
+msgctxt "#32107"
+msgid "Passphrase"
+msgstr "密码"
+
+msgctxt "#32108"
+msgid "Enable 'tethered' Wireless Access Point"
+msgstr "启用“联接线”无线接入点"
+
+msgctxt "#32109"
+msgid "Connect Automatically"
+msgstr "自动连接"
+
+msgctxt "#32110"
+msgid "Connection"
+msgstr "连接"
+
+msgctxt "#32111"
+msgid "IPv4"
+msgstr "IPv4"
+
+msgctxt "#32112"
+msgid "IPv6"
+msgstr "IPv6"
+
+msgctxt "#32113"
+msgid "IP Address Method"
+msgstr "IP地址方式"
+
+msgctxt "#32114"
+msgid "IP Address"
+msgstr "IP地址"
+
+msgctxt "#32115"
+msgid "Subnet Mask"
+msgstr "子网掩码"
+
+msgctxt "#32116"
+msgid "Default Gateway"
+msgstr "默认网关"
+
+msgctxt "#32117"
+msgid "Prefix Length"
+msgstr "前缀长度"
+
+msgctxt "#32118"
+msgid "Privacy"
+msgstr "隐私"
+
+msgctxt "#32119"
+msgid "DNS Servers"
+msgstr "DNS服务器"
+
+msgctxt "#32120"
+msgid "Nameserver #1"
+msgstr "名称服务器#1"
+
+msgctxt "#32121"
+msgid "Nameserver #2"
+msgstr "名称服务器#2"
+
+msgctxt "#32122"
+msgid "Nameserver #3"
+msgstr "名称服务器#3"
+
+msgctxt "#32123"
+msgid "NTP Servers"
+msgstr "NTP服务器"
+
+msgctxt "#32124"
+msgid "Timeserver #1"
+msgstr "时间服务器#1"
+
+msgctxt "#32125"
+msgid "Timeserver #2"
+msgstr "时间服务器#2"
+
+msgctxt "#32126"
+msgid "Timeserver #3"
+msgstr "时间服务器#3"
+
+msgctxt "#32127"
+msgid "DNS Domains"
+msgstr "DNS域"
+
+msgctxt "#32128"
+msgid "Domain #1"
+msgstr "域#1"
+
+msgctxt "#32129"
+msgid "Domain #2"
+msgstr "域#2"
+
+msgctxt "#32130"
+msgid "Domain #3"
+msgstr "域#3"
+
+msgctxt "#32140"
+msgid "Save"
+msgstr "保存"
+
+msgctxt "#32141"
+msgid "Delete"
+msgstr "删除"
+
+msgctxt "#32142"
+msgid "Refresh"
+msgstr "刷新"
+
+msgctxt "#32143"
+msgid "Disconnect"
+msgstr "断开连接"
+
+msgctxt "#32144"
+msgid "Connect"
+msgstr "连接"
+
+msgctxt "#32145"
+msgid "Pair"
+msgstr "配对"
+
+msgctxt "#32146"
+msgid "Hidden Network Name"
+msgstr "隐藏的网络名称"
+
+msgctxt "#32147"
+msgid "Wireless Network Passphrase"
+msgstr "无线网络密码"
+
+msgctxt "#32148"
+msgid "Wireless Network Username"
+msgstr "无线网络用户名"
+
+msgctxt "#32150"
+msgid "Edit"
+msgstr "编辑"
+
+msgctxt "#32180"
+msgid "Would you like to update @DISTRONAME@ now?"
+msgstr "你想要现在升级@DISTRONAME@吗？"
+
+msgctxt "#32181"
+msgid "Filename"
+msgstr "文件名"
+
+msgctxt "#32182"
+msgid "Download speed"
+msgstr "下载速度"
+
+msgctxt "#32183"
+msgid "Time remaining"
+msgstr "剩余时间"
+
+msgctxt "#32184"
+msgid "Extract file"
+msgstr "提取文件"
+
+msgctxt "#32185"
+msgid "Extract speed"
+msgstr "提取速度"
+
+msgctxt "#32186"
+msgid "Initialize Archive File"
+msgstr "初始化存档文件"
+
+msgctxt "#32187"
+msgid "New Version"
+msgstr "新版本"
+
+msgctxt "#32188"
+msgid "Current Version"
+msgstr "当前版本"
+
+msgctxt "#32189"
+msgid "Identification"
+msgstr "名称识别"
+
+msgctxt "#32190"
+msgid "System Name"
+msgstr "系统名称"
+
+msgctxt "#32191"
+msgid "Invalid URL"
+msgstr "不可用的URL"
+
+msgctxt "#32192"
+msgid "PIN lock"
+msgstr "PIN 锁"
+
+msgctxt "#32193"
+msgid "Enable @DISTRONAME@ Settings PIN Lock"
+msgstr "使能 @DISTRONAME@ 设置 PIN 锁"
+
+msgctxt "#32194"
+msgid "Change @DISTRONAME@ Settings PIN Lock"
+msgstr "修改 @DISTRONAME@ 设置 PIN 锁"
+
+msgctxt "#32196"
+msgid "About"
+msgstr "关于"
+
+msgctxt "#32198"
+msgid "SSID"
+msgstr "SSID"
+
+msgctxt "#32200"
+msgid "Samba"
+msgstr "Samba"
+
+msgctxt "#32201"
+msgid "SSH"
+msgstr "SSH"
+
+msgctxt "#32202"
+msgid "Use Samba Password Authentication"
+msgstr "使用Samba密码验证"
+
+msgctxt "#32203"
+msgid "Disable SSH Password"
+msgstr "禁用SSH密码"
+
+msgctxt "#32204"
+msgid "Enable Samba"
+msgstr "启用Samba"
+
+msgctxt "#32205"
+msgid "Enable SSH"
+msgstr "启用SSH"
+
+msgctxt "#32206"
+msgid "Enable Avahi (Zeroconf)"
+msgstr "启用Avahi (Zeroconf)"
+
+msgctxt "#32207"
+msgid "Avahi"
+msgstr "Avahi"
+
+msgctxt "#32208"
+msgid "Hidden Wlan"
+msgstr "隐藏的Wlan"
+
+msgctxt "#32209"
+msgid "SSH Password"
+msgstr "SSH密码"
+
+msgctxt "#32210"
+msgid "The default SSH password is widely known and considered insecure.[CR][CR]Setting a personal password is recommended."
+msgstr "默认的 SSH 密码众所周知，因而不安全。[CR][CR]建议为 SSH 设置一个专有密码。"
+
+msgctxt "#32212"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "#32213"
+msgid "Keep Existing"
+msgstr "保持现有"
+
+msgctxt "#32214"
+msgid "Set Password"
+msgstr "设置密码"
+
+msgctxt "#32215"
+msgid "Workgroup name"
+msgstr "工作组名称"
+
+msgctxt "#32216"
+msgid "Auto-Share External Drives"
+msgstr "自动共享外部驱动器"
+
+msgctxt "#32217"
+msgid "Minimum supported protocol"
+msgstr "最低支持的协议"
+
+msgctxt "#32218"
+msgid "Maximum supported protocol"
+msgstr "最高支持的协议"
+
+msgctxt "#32220"
+msgid "Bad password!"
+msgstr "密码太弱！"
+
+msgctxt "#32221"
+msgid "The entered password is too weak.[CR]SSH password is unchanged."
+msgstr "您输入的密码太弱。[CR]SSH 密码没有更改。"
+
+msgctxt "#32222"
+msgid "Password changed!"
+msgstr "密码已更改！"
+
+msgctxt "#32223"
+msgid "The SSH password has been successfully changed."
+msgstr "成功更改 SSH 密码。"
+
+msgctxt "#32224"
+msgid "Unknown error!"
+msgstr "出现未知错误！"
+
+msgctxt "#32225"
+msgid "There was an error during the process.[CR]SSH password is unchanged."
+msgstr "执行过程出现错误。[CR]SSH 密码未更改。"
+
+msgctxt "#32226"
+msgid "Enter new 4 digit PIN"
+msgstr "输入 4 位数 PIN 码"
+
+msgctxt "#32227"
+msgid "Re-enter PIN"
+msgstr "重新输入 PIN 码"
+
+msgctxt "#32228"
+msgid "Error - PIN codes did not match!"
+msgstr "错误 - PIN 码不匹配！"
+
+msgctxt "#32229"
+msgid "@DISTRONAME@ Settings PIN lock not set.[CR][CR]Please try again."
+msgstr "@DISTRONAME@ 设置 PIN 锁未设定。[CR][CR]请重试。"
+
+msgctxt "#32230"
+msgid "@DISTRONAME@ Settings PIN lock set."
+msgstr "@DISTRONAME@ 设置 PIN 锁设定。"
+
+msgctxt "#32231"
+msgid "Your @DISTRONAME@ Settings PIN lock has been set to:"
+msgstr "你的 @DISTRONAME@ 设置 PIN 锁已设定为："
+
+msgctxt "#32232"
+msgid "Error - PIN code not 4 digits!"
+msgstr "错误 - PIN 码非 4 位数字！"
+
+msgctxt "#32233"
+msgid "@DISTRONAME@ Settings Locked[CR]Enter 4 digit PIN"
+msgstr "@DISTRONAME@ 设置已锁定[CR]输入 4 位数字 PIN"
+
+msgctxt "#32234"
+msgid "Incorrect PIN!"
+msgstr "错误的 PIN！"
+
+msgctxt "#32235"
+msgid " attempts remaining."
+msgstr " 次可尝试。"
+
+msgctxt "#32236"
+msgid "You have entered an incorrect PIN too many times.[CR][CR]You will need to wait 5 minutes before trying again."
+msgstr "输入错误 PIN 的次数太多。[CR][CR]需等待五分钟后重试。"
+
+msgctxt "#32237"
+msgid "@DISTRONAME@ Settings Locked!"
+msgstr "@DISTRONAME@ 设置已锁定！"
+
+msgctxt "#32238"
+msgid "Time remaining before PIN can be entered: %02d:%02d[CR][CR]Too many previous failed attempts."
+msgstr "可输入PIN 需等待时间：%02d:%02d[CR][CR]之前失败次数过多。"
+
+msgctxt "#32240"
+msgid "Wireless Regulatory Domain"
+msgstr "无线监管域"
+
+msgctxt "#32300"
+msgid "Welcome to @DISTRONAME@"
+msgstr "欢迎来到@DISTRONAME@"
+
+msgctxt "#32301"
+msgid "Welcome"
+msgstr "欢迎"
+
+msgctxt "#32302"
+msgid "This wizard will guide you through the process of setting up your new @DISTRONAME@ installation - setting language, service  and connecting to the internet.[CR][CR]These settings can be changed later by "
+"navigating to Programs > @DISTRONAME@ Settings."
+msgstr "该向导将引导您完成设置新的@DISTRONAME@安装过程-设置语言，服务并将连接到互联网。.[CR][CR]这些设置稍后可以通过导航到程序>@DISTRONAME@设置进行更改。"
+
+msgctxt "#32303"
+msgid " => "
+msgstr " => "
+
+msgctxt "#32304"
+msgid "To be identified easily on the network, your new @DISTRONAME@ machine needs a name. Try to choose something meaningful to you - like part of the your mobile phone number. It should be unique on the funhome.tv. It should not be same as otherone's selection. For example , if you selected huoqubing as the name , then 'huoqubing.funhome.tv' is the machine's name on the internet.  If the System prompted 'CANNOT update' <system name>, you should change it to another name， maybe someone else used the name."
+msgstr "要在网络上轻松识别，您的新@DISTRONAME@机器需要一个名称。尝试选择一些对您有意义的东西 - 比如您的部分手机号码。此名称用于配置网络服务，如使用来云（Nextcloud）共享。它须是在funhome.tv上唯一的。它不能和别人的选择相同。[CR]例如：如果您选择‘霍去病’作为名字，那么'huoqubing.funhome.tv'就是这台新机器在互联网上的名字(当前系统名称只能是ASCII码，不能是中文字符)。如果系统提示‘CANNOT update'(不能更新)，您应该把名称改为另外一个，可能别人已经使用了这个名称。"
+
+msgctxt "#32305"
+msgid "Networking"
+msgstr "网络"
+
+msgctxt "#32306"
+msgid "In order to download backdrops, banners and thumbnails for your movies and TV shows and to use the device out of home, @DISTRONAME@ needs to be connected the Internet.[CR][CR]An Internet connection is also required for @DISTRONAME@ to automatically update itself."
+msgstr "为了下载电影和电视节目的背景，横幅和缩略图，以及外出时能够使用本设备，@DISTRONAME@需要连接互联网。[CR][CR] @DISTRONAME@也需要互联网连接来自动更新。"
+
+msgctxt "#32307"
+msgid " <= "
+msgstr " <= "
+
+msgctxt "#32308"
+msgid "Hostname:"
+msgstr "主机名："
+
+msgctxt "#32309"
+msgid "The following Networks are currently available:"
+msgstr "以下网络当前可用："
+
+msgctxt "#32310"
+msgid "Language:"
+msgstr "语言："
+
+msgctxt "#32311"
+msgid "Sharing and Remote Access"
+msgstr "共享和远程访问"
+
+msgctxt "#32312"
+msgid "@DISTRONAME@ also supports SSH for remote access. This is for advanced users who wish to interact with @DISTRONAME@'s underlying operating system. The default user is [COLOR blue]root[/COLOR] and the default password is [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
+msgstr "@DISTRONAME@还支持SSH远程访问。这适用于希望与@DISTRONAME@的底层操作系统交互的高级用户。默认用户是[COLOR blue]root[/COLOR]，默认密码是 [COLOR blue]@ROOT_PASSWORD@[/COLOR]。"
+
+msgctxt "#32313"
+msgid "In order to share your files between your computers @DISTRONAME@ has incorporated a samba server. This samba server can be integrated into your local network by accessing it in a familiar way with Finder or Windows Explorer.  For security , you should disable samba. "
+msgstr "为了在您的计算机之间共享您的文件@DISTRONAME@已经包含了一个samba服务器。 通过使用Finder或Windows资源管理器以熟悉的方式访问此samba服务器可以集成到您的本地网络中。因为安全原因，您应该关闭SAMBA。 "
+
+msgctxt "#32316"
+msgid "Configure Services:"
+msgstr "配置服务："
+
+msgctxt "#32317"
+msgid "Thank you"
+msgstr "谢谢您"
+
+msgctxt "#32318"
+msgid "Your @DISTRONAME@ installation is now complete and you are about to enter Kodi where you can set up your media libraries. Install Nextcloud/Zerotier One/Transmission Client on your PC or mobile.  For help with this, there is a guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a dedicated team of developers who work purely in their spare time. Even as a volunteer project, we still have to pay for our internet bandwidth and development resources so if you find @DISTRONAME@ useful we will always appreciate a donation of any amount.[CR][CR]Finally, we hope you enjoy using @DISTRONAME@ as much as we've enjoyed building it. If you need any more help, you can find links to our support forum along with latest news at our website."
+msgstr "您的 @DISTRONAME@ 安装完成，并且下一步将进入Kodi， 您可以设置您的媒体库。在PC或手机上安装Nextcloud、Zerotier One、TransmissionBT 的 客户端，以便访问。 在wiki.kodi.tv上有一个指南，由一组开发人员在业余时间制作的。即便是作为一个志愿者项目，我们依然还是需要支付我们的互联网带宽以及开发资源的费用，所以如果您觉得 @DISTRONAME@ 有用的话， 我们将很感谢您的任何数量的捐赠。最后，祝您使用 @DISTRONAME@ 快乐，就像我们建造它的快乐一样。如果需要什么帮助，您可以在我们的网站上最近的新闻中找到服务支持论坛的链接。"
+
+msgctxt "#32319"
+msgid "Cron"
+msgstr "Cron"
+
+msgctxt "#32320"
+msgid "Enable Cron"
+msgstr "启用Cron"
+
+msgctxt "#32323"
+msgid "Reset to Defaults"
+msgstr "重置为默认值"
+
+msgctxt "#32324"
+msgid "Reset System Settings to defaults"
+msgstr "将系统设置重置为默认值"
+
+msgctxt "#32325"
+msgid "Reset @DISTRONAME@ to defaults"
+msgstr "将@DISTRONAME@重置为默认值"
+
+msgctxt "#32326"
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+msgctxt "#32328"
+msgid "The system must reboot."
+msgstr "系统必须重启。"
+
+msgctxt "#32329"
+msgid "Rebooting in %d seconds"
+msgstr "在 %d秒内重启"
+
+msgctxt "#32330"
+msgid "Keyboard Type"
+msgstr "键盘类型"
+
+msgctxt "#32331"
+msgid "Bluetooth"
+msgstr "蓝牙"
+
+msgctxt "#32333"
+msgid "Connected: "
+msgstr "已连接： "
+
+msgctxt "#32334"
+msgid "Yes"
+msgstr "是"
+
+msgctxt "#32335"
+msgid "No"
+msgstr "否"
+
+msgctxt "#32338"
+msgid "No Bluetooth adapter found."
+msgstr "未找到蓝牙适配器。"
+
+msgctxt "#32339"
+msgid "No Bluetooth device found. Please put your Bluetooth device into discovery mode[CR]and start the scan"
+msgstr "找不到蓝牙设备。 请将您的蓝牙设备置于发现模式[CR]并开始扫描"
+
+msgctxt "#32343"
+msgid "Enter the following Key on your Device."
+msgstr "在您的设备上输入以下密钥。"
+
+msgctxt "#32344"
+msgid "Enable Bluetooth"
+msgstr "启用蓝牙"
+
+msgctxt "#32346"
+msgid "Bluetooth is disabled"
+msgstr "蓝牙被禁用"
+
+msgctxt "#32358"
+msgid "Trust and Connect"
+msgstr "信任并连接"
+
+msgctxt "#32362"
+msgid "Check for updates now:"
+msgstr "现在检查更新："
+
+msgctxt "#32363"
+msgid "@DISTRONAME@"
+msgstr "@DISTRONAME@"
+
+msgctxt "#32364"
+msgid "Update available"
+msgstr "更新可用"
+
+msgctxt "#32365"
+msgid "Show Update Notifications"
+msgstr "显示更新通知"
+
+msgctxt "#32366"
+msgid "Update Download Completed"
+msgstr "更新下载完毕"
+
+msgctxt "#32367"
+msgid "Update Extract Complete"
+msgstr "更新提取完毕"
+
+msgctxt "#32368"
+msgid "Advanced Network Settings"
+msgstr "高级网络设置"
+
+msgctxt "#32369"
+msgid "Wait for network before starting Kodi"
+msgstr "在开始Kodi之前等待网络"
+
+msgctxt "#32370"
+msgid "Maximum Wait Time (Sec.)"
+msgstr "最大等待时间（秒）"
+
+msgctxt "#32371"
+msgid "Backup"
+msgstr "备份"
+
+msgctxt "#32372"
+msgid "Create System and Kodi Backup"
+msgstr "创建系统和Kodi备份"
+
+msgctxt "#32373"
+msgid "Restore Backup"
+msgstr "恢复备份"
+
+msgctxt "#32375"
+msgid "Backup Progress"
+msgstr "备份进度"
+
+msgctxt "#32376"
+msgid "Submit Log"
+msgstr "提交日志"
+
+msgctxt "#32377"
+msgid "Upload latest Kodi log and configs, and view the short URL"
+msgstr "上传最新的Kodi日志和配置，并查看短网址"
+
+msgctxt "#32378"
+msgid "Upload latest Kodi crash log and configs, and view the short URL"
+msgstr "上传最新的Kodi崩溃日志和配置，并查看短网址"
+
+msgctxt "#32379"
+msgid "There is not enough free storage space to continue!"
+msgstr "没有足够的空闲存储空间来继续！"
+
+msgctxt "#32380"
+msgid "Restoring system settings requires a reboot. Are you sure you want to restore?"
+msgstr "恢复系统设置需要重启。 你确定要恢复吗？"
+
+msgctxt "#32381"
+msgid "Accept incoming Bluetooth Filetransfer ?"
+msgstr "接受传入的蓝牙文件传输？"
+
+msgctxt "#32382"
+msgid "Speed"
+msgstr "速度"
+
+msgctxt "#32383"
+msgid "Play Files ?"
+msgstr "播放文件？"
+
+msgctxt "#32384"
+msgid "OBEX Enabled"
+msgstr "OBEX已启用"
+
+msgctxt "#32385"
+msgid "OBEX Upload Folder"
+msgstr "OBEX上传文件夹"
+
+msgctxt "#32386"
+msgid "Keyboard Layout Variant #1"
+msgstr "键盘布局变体#1"
+
+msgctxt "#32387"
+msgid "Keyboard Layout Variant #2"
+msgstr "键盘布局变体#2"
+
+msgctxt "#32388"
+msgid "Enable Standby"
+msgstr "启用待机"
+
+msgctxt "#32389"
+msgid "Disable Standby"
+msgstr "禁用待机"
+
+msgctxt "#32390"
+msgid "Settings addon is not yet ready, please try again later."
+msgstr "设置插件尚未准备就绪，请稍后重试。"
+
+msgctxt "#32393"
+msgid "** SAFE MODE! ** SAFE MODE! ** SAFE MODE! **"
+msgstr "** 安全模式！ ** 安全模式！ ** 安全模式！ **"
+
+msgctxt "#32394"
+msgid "@DISTRONAME@ has temporarily started in safe mode due to repeated Kodi crashes.[CR][CR]You may now investigate the cause of the crashes by enabling ssh or Samba.[CR][CR]Your original Kodi installation can be accessed via \"/storage/.kodi.FAILED\" and the Samba \"Kodi-Failed\" share.[CR][CR]Rebooting will return to your original Kodi installation.[CR][CR]Go to https://forum.libreelec.tv if you require further assistance. When posting to the forum include the link to your crash log which can be viewed by clicking the crash log option in Settings > FunHomeTV > System > Submit Log."
+msgstr "由于Kodi反复的崩溃，@DISTRONAME@暂时以安全模式启动。[CR][CR]您现在可以通过启用ssh或Samba来查看崩溃的原因。[CR][CR]您原来的Kodi安装可以通过 “/storage/.kodi.FAILED”和Samba“Kodi-Failed”共享。[CR][CR]重新启动将返回到您原来的Kodi安装。[CR][CR]如果你需要进一步的帮助，请转到https://forum.libreelec.tv。 在发布到论坛时，包含链接到您的崩溃日志，可通过单击设置> FunHomeTV>系统>提交日志中的崩溃日志选项查看该日志。"
+
+msgctxt "#32395"
+msgid "Firewall"
+msgstr "防火墙"
+
+msgctxt "#32396"
+msgid "Custom"
+msgstr "自定义"
+
+msgctxt "#32397"
+msgid "Off"
+msgstr "关"
+
+msgctxt "#32398"
+msgid "Home"
+msgstr "Home"
+
+msgctxt "#32399"
+msgid "Public"
+msgstr "公共"
+
+msgctxt "#32400"
+msgid "Idle Timeout"
+msgstr "空闲超时"
+
+msgctxt "#32401"
+msgid "Syncing Disks..."
+msgstr "正在同步磁盘..."
+
+msgctxt "#32402"
+msgid "Backup is incomplete. An error occurred. See Kodi log for details."
+msgstr "备份不完整。发生了一个错误。详细信息见 Kodi 日志。"
+
+msgctxt "#32410"
+msgid "Logging"
+msgstr "登录中"
+
+msgctxt "#32411"
+msgid "Use Persistent Logs"
+msgstr "使用持久日志"
+
+msgctxt "#32412"
+msgid "Use Persistent Journal and Log files instead of default volatile ones. Reboot to apply changes."
+msgstr "使用持久日志和日志文件，而不是默认的易失性日志和日志文件。重新启动以应用更改。"
+
+msgctxt "#32413"
+msgid "Journal Size"
+msgstr "日志大小"
+
+msgctxt "#32414"
+msgid "Set max. size of persistent journal. Reboot to apply changes."
+msgstr "设置持久日志文件最大值。重新启动以应用更改。"
+
+msgctxt "#32415"
+msgid "Disable journald Rate Limit"
+msgstr "禁用日志速率限制"
+
+msgctxt "#32416"
+msgid "Reboot to apply changes."
+msgstr "重新启动以应用更改。"
+
+msgctxt "#32430"
+msgid "Nextcloud"
+msgstr "来云服务 Nextcloud"
+
+msgctxt "#32431"
+msgid "Enable  Nextcloud"
+msgstr "开启来云服务Nextcloud"
+
+msgctxt "#32434"
+msgid "Input Zerotier Network ID and Join"
+msgstr "输入零层定制网络Zerotier One标识并且加入"
+
+msgctxt "#32437"
+msgid "Zerotier network status"
+msgstr "零层定制网络的状态"
+
+msgctxt "#32438"
+msgid "Leave Zerotier Network"
+msgstr "离开零层定制网络" 
+
+msgctxt "#32499"
+msgid "Transmission"
+msgstr "Transmission下载" 
+
+msgctxt "#32440"
+msgid "Enable TransmissionBT"
+msgstr "开启TransmissionBT下载服务"
+
+msgctxt "#32435"
+msgid "Zerotier network type"
+msgstr "零层定制网络类型"
+
+msgctxt "#32436" 
+msgid "Zerotier network assigned IPv4 addresses"
+msgstr "零层定制网络赋予的IPv4地址"
+
+msgctxt "#32550" 
+msgid "Input invalid"
+msgstr "输入不符合要求"
+
+msgctxt "#32551" 
+msgid "Not in range a-f 0-9 or length should be 16, please reenter."
+msgstr "字符不在a到f 0到9之间，或者长度应该是16个字符， 请重新输入。"
+
+msgctxt "#32552"
+msgid "ZeroTier Network Join Command OK !"
+msgstr "加入零层定制网络命令成功！"
+
+msgctxt "#32553"
+msgid "the node id is :"
+msgstr "这个设备的节点标识号是："
+
+msgctxt "#32554"
+msgid "Unknown error!"
+msgstr "发生未知的错误！"
+
+msgctxt "#32555"
+msgid "There was an error during the process.[CR]Network ID should be unchanged."
+msgstr "在处理过程中发生错误。[CR]网络标识应该没有改变。"
+
+msgctxt "#32557"
+msgid "Select which network to leave"
+msgstr "选择退出哪一个网络"
+
+msgctxt "#32558"
+msgid "Zerotier Network Leave OK !"   
+msgstr "零层定制网络退出成功！"
+
+msgctxt "#32556" 
+msgid "The Zerotier Network successfully left."
+msgstr "指定的零层定制网络已经成功退出。"
+
+msgctxt "#32559"
+msgid "Unknown error!"   
+msgstr "发生未知的错误！"
+
+msgctxt "#32560" 
+msgid "There was an error during the process.[CR]network is unchanged."
+msgstr "在处理过程中发生错误。[CR]网络标识应该没有改变。"
+
+msgctxt "#32561"
+msgid "the Zerotier network Node id"
+msgstr "零层定制网络节点标识号"
+
+msgctxt "#32562"
+msgid "Network Node Online status"
+msgstr "零层定制网络节点在线状态"
+
+msgctxt "#32563"
+msgid "whether the Zerotier network Node Online or not"
+msgstr "本零层定制网络节点是否在线"
+
+msgctxt "#32564"
+msgid "Number of Zerotier Network Joined"
+msgstr "零层定制网络加入的个数"
+
+msgctxt "#32565"
+msgid "Current Number of Zerotier Network this node totally joined"
+msgstr "当前总共加入的零层定制网络的个数"
+
+msgctxt "#32566"
+msgid "current network id of zerotier"
+msgstr "当前的零层定制网络标识号"
+
+msgctxt "#32567"
+msgid "Zerotier Network ID:Name"
+msgstr "零层定制网络标识号:名称"
+
+msgctxt "#32540" 
+msgid "Zerotier Network Node ID"
+msgstr "零层定制网络节点标识号"
+
+msgctxt "#32981"
+msgid "Zerotier network assigned IPv6 addresses"
+msgstr "零层定制网络赋予的IPv6地址"
+
+msgctxt "#32982"
+msgid "Current got Zerotier Network IPv6 addresses."
+msgstr "当前获取的零层网络赋予的IPv6地址"
+
+msgctxt "#32541"
+msgid "Zerotier is the software defined network, which make physical long distance near in network. You should first register at https://my.zerotier.com  and create your own network. then get the network id fill in the following field(should be 16 chars or number, like '8056face1234abcd') .After join the network, you should accept it at the control panel of the zerotier.com, same as the register web site."
+msgstr "零层定制网络(Zerotier)是一种通过软件定义的网络，可以把天涯的距离变成网络的咫尺。您应该首先在 https://my.zerotier.com 上注册并且建立您的网络，然后在后面的位置输入您获得的网络唯一标识（应该是一组16位的字母和数字，例如'8056face1234abcd'）。输入网络唯一标识后，您应该在 https://my.zerotier.com 的控制面板上接受本机的加入网络请求，也就是在虚线处打一下对号。"
+
+msgctxt "#32542" 
+msgid "Zerotier"
+msgstr "零层定制网络" 
+
+msgctxt "#32544" 
+msgid "Online"
+msgstr "在线" 
+
+msgctxt "#32545" 
+msgid "Offline"
+msgstr "离线" 
+
+msgctxt "#32546"
+msgid "** NETWORK FAILED MODE! ** NETWORK FAILED MODE! ** NETWORK FAILED MODE! **"
+msgstr "**网络失效模式！**网络失效模式！**网络失效模式！**"
+
+msgctxt "#32547"
+msgid "@DISTRONAME@ has temporarily started in Network failed mode due to network NOT online operate.[CR][CR]You may now  make network line checked and then reboot the box .[CR][CR] "
+msgstr "@DISTRONAME@ 当前进入网络未在线模式。[CR][CR]如果您是客户，请检查网络，然后按需要重新启动。[CR][CR]"
+
+msgctxt "#32600"
+msgid "funhome.tv name registed OK"
+msgstr "funhome.tv 名称注册成功"
+
+msgctxt "#32601"
+msgid "funhome.tv name registe Failed"
+msgstr "funhome.tv 名称注册失败"
+
+msgctxt "#32568"
+msgid "IP address"
+msgstr "IP 地址"
+
+msgctxt "#32569"
+msgid "IPv4 address to contact the device"
+msgstr "用于连接这个设备的IPv4地址"
+
+msgctxt "#32570"
+msgid "System IPv6 Name"
+msgstr "系统IPv6名称"
+
+msgctxt "#32571"
+msgid "Hostname of your device only for IPv6. It should be registerd on funhome.tv DNS."
+msgstr "只用于IPv6的系统名称。它应该在funhome.tv域名系统中注册了。"
+
+msgctxt "#32572"
+msgid "IPv6 address"
+msgstr "IPv6 地址"
+
+msgctxt "#32573"
+msgid "IPv6 address to contact the device"
+msgstr "用于连接这个设备的IPv6地址"
+
+msgctxt "#32738"
+msgid "Zerotier One"
+msgstr "零层定制网络Zerotier One" 
+
+msgctxt "#32739"
+msgid "Enable Zerotier One"
+msgstr "开启零层定制网络Zerotier One" 
+
+msgctxt "#32574"
+msgid "Scan the Code jump to Zerotier One Login or Register"
+msgstr "扫一扫跳转至ZeroTier One登录或注册" 
+
+msgctxt "#32575"
+msgid "You should accept the device join your network on https://my.zerotier.com"
+msgstr "您应该用手机或电脑在 https://my.zerotier.com 上接受这个设备加入网络" 
+
+msgctxt "#32576"
+msgid "Version Status"
+msgstr "版本状态" 
+
+msgctxt "#32577"
+msgid "Current Version Status ."
+msgstr "当前的版本状态。" 
+
+msgctxt "#32578"
+msgid "Plan Update Time"
+msgstr "计划更新时间" 
+
+msgctxt "#32579"
+msgid "Update need to reboot , when download completed , kodi not playing , and at night to reboot and update."
+msgstr "更新需要重新启动。当下载完成，KODI没有在播放状态，在夜间，将重新启动并更新。" 
+
+msgctxt "#32580"
+msgid "Already Newest Version."
+msgstr "已经是最新的版本。" 
+
+msgctxt "#32581"
+msgid "Have New Version "
+msgstr "有更新的版本 " 
+
+msgctxt "#32582"
+msgid "Downloaded "
+msgstr "已下载 " 
+
+msgctxt "#32583"
+msgid "Night AM 0-6  "
+msgstr "夜间 凌晨 0点到6点" 
+
+msgctxt "#32584"
+msgid "Update Check Time"
+msgstr "更新检查时间" 
+
+msgctxt "#32585"
+msgid "Last Update Check Time"
+msgstr "最近更新的检查时间" 
+
+msgctxt "#32586"
+msgid "Check Update Now"
+msgstr "现在检查更新" 
+
+msgctxt "#32587"
+msgid "Check Update Now"
+msgstr "现在检查更新" 
+
+msgctxt "#32599"
+msgid "Please use your mobile phone nextcloud client to link the device."
+msgstr "请使用您的手机上Nextcloud客户端应用程序链接这个设备" 
+
+msgctxt "#32598"
+msgid "the address is https://[hostname].funhome.tv ."
+msgstr "地址是　https://[主机名称].funhome.tv　。" 
+
+msgctxt "#32597"
+msgid "Please download from your mobile's appstore."
+msgstr "请从您的手机应用商店中下载。" 
+
+msgctxt "#32596"
+msgid "follow the app guide to procede."
+msgstr "按照应用的向导进行操作" 
+
+msgctxt "#32595"
+msgid "Domain Name Service Registered :"
+msgstr "域名已经注册：" 
+
+msgctxt "#32594"
+msgid "Certificate Apply from :"
+msgstr "证书申请自：" 
+
+msgctxt "#32593"
+msgid "Certificate Applied :"
+msgstr "证书已经申请：" 
+
+msgctxt "#32592"
+msgid "Whether Domain Name Service(DNS) have registered "
+msgstr "是否本机域名已经注册" 
+
+msgctxt "#32591"
+msgid "Certificate supplier　 , press to switch from the 2 supplier"
+msgstr "显示证书提供者　，　按键从两个提供者之间切换" 
+
+msgctxt "#32590"
+msgid "Whether the host certificate have applied ."
+msgstr "是否本机证书已经申请成功" 
+
+msgctxt "#36602"
+msgid "Display Nextcloud link QRCode"
+msgstr "显示来云连接二维码" 
+
+msgctxt "#36603"
+msgid "Display the host's Nextcloud QRCode for mobile client to link with ."
+msgstr "显示设备的来云二维码，用于手机上的来云客户端扫描连接。" 
+
+msgctxt "#36600"
+msgid "Certificate Issuer switched to ZeroSSL"
+msgstr "证书提供者切换到了ZeroSSL" 
+
+msgctxt "#36601"
+msgid "Certificate Issuer switched to Let's Encrypt"
+msgstr "证书提供者切换到了Let's Encrypt" 
+
+msgctxt "#36604"
+msgid "Display certificate apply log"
+msgstr "显示证书申请日志" 
+
+msgctxt "#36605"
+msgid "Display the log of certificate apply to debug ."
+msgstr "显示证书申请过程的日志，以发现问题。" 
+
+msgctxt "#36606"
+msgid "The certificate apply log file is not exist."
+msgstr "证书申请过程的日志文件不存在" 
+
+
