@@ -1,0 +1,14 @@
+# build dir
+build/
+
+# bytecode files
+*.pyo
+*.pyc
+
+# backup files
+*.orig
+
+# Python development ignores
+.idea/*
+.vscode/*
+.venv/*
