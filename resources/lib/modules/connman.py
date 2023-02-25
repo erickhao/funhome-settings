@@ -952,11 +952,13 @@ class connman(modules.Module):
         self.load_values()          #from  dbus-python to dbussy , changed a lot , agent and listner added
         self.init_netfilter(service=1)
         self.agent = Agent()
-        self.listemner = Listener(self)
+        self.listener = Listener(self)
 
     @log.log_function()
     def stop_service(self):
-        self.agent.unregister_agent()
+        #self.agent.unregister_agent()
+        del self.listener       #release it 
+        del self.agent
         if hasattr(self, 'dbusConnmanManager'):
             self.dbusConnmanManager = None
             del self.dbusConnmanManager
@@ -1051,6 +1053,12 @@ class Listener(dbus_connman.Listener):
     def __init__(self, parent):
         self.parent = parent
         super().__init__()
+    
+    @log.log_function()
+    def __del__(self, parent):
+        super().__del__()
+        self.parent = None
+
 
 
     @log.log_function()
@@ -1068,6 +1076,16 @@ class Listener(dbus_connman.Listener):
                     oe.ipv4address_2_funhomenic = va
                     oe.ipaddress_from_connman = True
                     oe.updateSystemAddress()
+        if name == 'IPv6':
+            if 'Address' in value:
+                va = str(value['Address'])
+                oe.ipv6address_local = va
+                #self.parent.listItems[path].setProperty('Address', va)
+                #add address if zerotier not added address
+                if (oe.ipaddress_from_zerotier == None):
+                    oe.ipv6address_2_funhomenic = va
+                    oe.ipaddress_from_connman = True
+                    oe.updateSystemAddress()
         if self.parent.visible:
             self.updateGui(name, value, path)
 
@@ -1079,13 +1097,24 @@ class Listener(dbus_connman.Listener):
         if name == 'IPv4':
             if 'Address' in value:
                 va = str(value['Address'])
-                self.oe.ipv4address_local = va
+                oe.ipv4address_local = va
                 #self.parent.listItems[path].setProperty('Address', va)
                 #add address if zerotier not added address
                 if (oe.ipaddress_from_zerotier == None):
                     oe.ipv4address_2_funhomenic = va
                     oe.ipaddress_from_connman = True
                     oe.updateSystemAddress()
+        if name == 'IPv6':
+            if 'Address' in value:
+                va = str(value['Address'])
+                oe.ipv6address_local = va
+                #self.parent.listItems[path].setProperty('Address', va)
+                #add address if zerotier not added address
+                if (oe.ipaddress_from_zerotier == None):
+                    oe.ipv6address_2_funhomenic = va
+                    oe.ipaddress_from_connman = True
+                    oe.updateSystemAddress()
+
         if self.parent.visible:
             if oe.winOeMain.lastMenu == 1:
                 oe.winOeMain.lastMenu = -1

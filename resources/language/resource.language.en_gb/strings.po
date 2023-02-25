@@ -868,7 +868,7 @@ msgid "Thank you"
 msgstr ""
 
 msgctxt "#32318"
-msgid "Your @DISTRONAME@ installation is now complete and you are about to enter Kodi where you can set up your media libraries. Install Nextcloud/Zerotier One/Transmission Client on your PC or mobile.  For help with this, there is a guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a dedicated team of developers who work purely in their spare time. Even as a volunteer project, we still have to pay for our internet bandwidth and development resources so if you find @DISTRONAME@ useful we will always appreciate a donation of any amount.[CR][CR]Finally, we hope you enjoy using @DISTRONAME@ as much as we've enjoyed building it. If you need any more help, you can find links to our support forum along with latest news at our website."
+msgid "Your @DISTRONAME@ installation is about complete, except the host's certificate should be applying in background . If it applied success before you close the wizard , You will be notified by a window with QRCode for you to scan after you close this window, then you can link your mobile with the device (after you download nextcloud client on you mobile phone). If it is not applied success before you close the wizard , you can check it in Settings . If You are using the device in virtual machine (in vmplayer for example) , it's a good time to specify a folder to store the photos and videos from your mobile . After you specify the folder , if FunHomeTV can use it , you will be notified.  You are about to enter Kodi . Install Nextcloud/Zerotier One/Transmission Client on your PC or mobile.  For help with this, there is a guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a dedicated team of developers who work purely in their spare time. Even as a volunteer project, we still have to pay for our internet bandwidth and development resources so if you find @DISTRONAME@ useful we will always appreciate a donation of any amount.[CR][CR]Finally, we hope you enjoy using @DISTRONAME@ as much as we've enjoyed building it. If you need any more help, you can find links to our support forum along with latest news at our website."
 msgstr ""
 
 msgctxt "#32319"
@@ -916,11 +916,11 @@ msgid "Connected: "
 msgstr ""
 
 msgctxt "#32334"
-msgid "Yes"
+msgid "✔"
 msgstr ""
 
 msgctxt "#32335"
-msgid "No"
+msgid "✘"
 msgstr ""
 
 msgctxt "#32338"
@@ -1360,19 +1360,19 @@ msgid "Check Update Now"
 msgstr "" 
 
 msgctxt "#32599"
-msgid "Please use your mobile phone nextcloud client to link the device."
+msgid "Please use your mobile phone nextcloud client to scan the QR code."
 msgstr "" 
 
 msgctxt "#32598"
-msgid "the address is https://hostname.funhome.tv ."
+msgid "The default administrator username is 'nc', password is 'funhome.tv'."
 msgstr "" 
 
 msgctxt "#32597"
-msgid "Please download from your mobile's appstore."
+msgid "Please download Nextcloud app from your mobile's appstore. Should be free."
 msgstr "" 
 
 msgctxt "#32596"
-msgid "follow the app guide to procede."
+msgid "The entrance to scan the QR code is at lower part of your mobile screen, after you press 'Login' button."
 msgstr "" 
 
 msgctxt "#32595"
@@ -1427,6 +1427,10 @@ msgctxt "#36606"
 msgid "The certificate apply log file is not exist."
 msgstr "" 
 
+msgctxt "#36607"
+msgid "The TLS certificate apply successed"
+msgstr "" 
 
-
-
+msgctxt "#36608"
+msgid "The shared folder is mounted"
+msgstr "" 

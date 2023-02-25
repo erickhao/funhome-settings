@@ -23,6 +23,9 @@ class Agent(dbus_utils.Agent):
     def __init__(self):
         super().__init__(BUS_NAME, PATH_AGENT)
 
+    def __del__(self):
+        super().__del__(BUS_NAME, PATH_AGENT)
+
     def manager_register_agent(self):
         dbus_utils.call_method(BUS_NAME, PATH_BLUEZ, INTERFACE_AGENT_MANAGER,
                                'RegisterAgent', PATH_AGENT, 'KeyboardDisplay')
@@ -118,6 +121,16 @@ class Listener(object):
             fallback=True,
             func=self._on_properties_changed,
             path='/')
+
+    def __del__(self):
+        dbus_utils.BUS.unlisten_propchanged(
+            interface=dbussy.DBUS.INTERFACE_PROPERTIES,
+            fallback=True,
+            func=self._on_properties_changed,
+            path='/')
+        dbus_utils.BUS.unlisten_objects_removed(func=self._on_interfaces_removed)
+        dbus_utils.BUS.unlisten_objects_added(func=self._on_interfaces_added)
+
 
     @ravel.signal(name='InterfacesAdded', in_signature='oa{sa{sv}}', arg_keys=('path', 'interfaces'))
     def _on_interfaces_added(self, path, interfaces):

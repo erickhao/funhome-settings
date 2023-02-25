@@ -18,15 +18,15 @@ FATAL = 4
 NONE = 5
 
 _DEFAULT = DEBUG
-_HEADER = 'SETTINGS: '
+_HEADER = 'FunHomeTV SETTINGS: '
 
 
 try:
     import xbmc
     _NO_DEBUG_ENV = os.environ.get('DEBUG', 'no') == 'no'
     def _log(message, level=_DEFAULT):
-        if level == DEBUG and _NO_DEBUG_ENV:
-            return
+        #if level == DEBUG and _NO_DEBUG_ENV:
+        #    return
         xbmc.log(message, level)
 except ModuleNotFoundError:
     def _log(message, level=_DEFAULT):

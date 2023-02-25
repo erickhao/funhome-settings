@@ -24,9 +24,25 @@ class Agent(object):
             self.register_agent()
         self.watch_name()
 
+    def __del__(self, bus_name=None, path_agent=None):
+        #self.bus_name = bus_name
+        #self.path_agent = path_agent
+        self.unwatch_name()
+        if self.bus_name in list_names():
+            self.unregister_agent()
+
     @log.log_function()
     def watch_name(self):
         BUS.listen_signal(
+            interface=dbussy.DBUS.SERVICE_DBUS,
+            fallback=True,
+            func=self.on_name_owner_changed,
+            path='/',
+            name='NameOwnerChanged')
+
+    @log.log_function()
+    def unwatch_name(self):
+        BUS.unlisten_signal(
             interface=dbussy.DBUS.SERVICE_DBUS,
             fallback=True,
             func=self.on_name_owner_changed,

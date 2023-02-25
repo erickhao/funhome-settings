@@ -28,7 +28,7 @@ class QRWin(pyxbmct.AddonDialogWindow):
         # Call the base class' constructor.
         super(QRWin, self).__init__(title)
         # Set width, height and the grid parameters
-        self.setGeometry(600, 600, 8, 8)
+        self.setGeometry(912, 684, 16, 16)
         # Call set controls method
         self.image = img
         self.text1 = textContent1
@@ -44,20 +44,20 @@ class QRWin(pyxbmct.AddonDialogWindow):
         """Set up UI controls"""
         # Image control
         pimage = pyxbmct.Image(self.image)
-        self.placeControl(pimage, 0, 2, rowspan=4, columnspan=4)
+        self.placeControl(pimage, 0, 4, rowspan=8, columnspan=8)
         # Text label1
         label1 = pyxbmct.Label(self.text1)
-        self.placeControl(label1, 4, 0, rowspan=1, columnspan=8)
+        self.placeControl(label1, 8, 0, rowspan=2, columnspan=16)
         # Text label2
         label2 = pyxbmct.Label(self.text2)
-        self.placeControl(label2, 5, 0, rowspan=1, columnspan=8)
+        self.placeControl(label2, 10, 0, rowspan=2, columnspan=16)
         # Text label3
         label3 = pyxbmct.Label(self.text3)
-        self.placeControl(label3, 6, 0, rowspan=1, columnspan=8)
+        self.placeControl(label3, 12, 0, rowspan=2, columnspan=16)
         #self.placeControl(self.name_field, 3, 1)
         # Close button
         self.close_button = pyxbmct.Button('OK')
-        self.placeControl(self.close_button, 7, 3, rowspan=1, columnspan=2)
+        self.placeControl(self.close_button, 14, 6, rowspan=2, columnspan=4)
         # Connect close button
         self.connect(self.close_button, self.close)
         # Hello button.
@@ -1108,11 +1108,15 @@ class services(modules.Module):
             ash.close()
             #print("read file ok")
             if (jc2['status']=='Complete'):
-                nextcloud_address = "https://" + oe.last_hostname
+                nextcloud_address = "nc://login/user:nc&password:funhome.tv&server:" + "https://" + oe.last_hostname
                 img=qrcode.make(nextcloud_address)
                 img.save('/storage/.kodi/nextcloud_address.png')
                 # Create a window instance.
-                qrDialog = QRWin(oe._(32599), '/storage/.kodi/nextcloud_address.png' , oe._(32598), oe._(32597) + oe.last_hostname  , oe._(32596))  #32599 title:Please use your mobile phone nextcloud client to link the device. 32598: the address is https://hostname.funhome.tv . 32597: Please download from your mobile's appstore. 32596: follow the app guide to procede. 
+                qrDialog = QRWin(oe._(32599), '/storage/.kodi/nextcloud_address.png' , oe._(32598) + "https://" +oe.last_hostname , oe._(32597)  , oe._(32596))  
+                #32599 title:Please use your mobile phone nextcloud client to scan the QR code. 
+                # #32598: The default administror username of the Nextcloud Hub is 'nc' , password is 'funhometv'. After you scan the QR code , remember to set a new password for security reason. 
+                # #32597: Please download Nextcloud app from your mobile's appstore. If you are using Android , maybe from Google Play Store or your vendor's appstore. If you are using iPhone , maybe from Apple Appstore. The application's name is 'Nextcloud' . Should be free.  
+                # #32596: The entrance to scan the QR code is at lower part of your mobile screen , after you press 'Login' button (Your mobile phone and the funhometv device should be on same WLAN , or network setup ok ). Then follow the guide you should link your mobile with this device . 
                 qrDialog.doModal()
                 del qrDialog
                 

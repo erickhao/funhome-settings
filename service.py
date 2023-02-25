@@ -8,6 +8,7 @@ import socket
 import threading
 
 import xbmc
+import time
 
 import syspath
 import dbus_utils
@@ -62,12 +63,22 @@ class Service_Thread(threading.Thread):
                         log.log("FunHomeTV-settings-run::have winOeMain ",log.INFO)
                         if oe.winOeMain.visible != True:
                             log.log("FunHomeTV-settings-run::have winOeMain not visiable, start new thread",log.INFO)
-                            threading.Thread(
-                                target=oe.openConfigurationWindow).start()
+                            threading.Thread(target=oe.openConfigurationWindow).start()
                             log.log("FunHomeTV-settings-run::have winOeMain not visiable, after new thread",log.INFO)
-                if message == 'exit':
+                        else:
+                            log.log("FunHomeTV-settings-run::maybe something wrong,still want open configuration windows with it visible?",log.INFO)
+                elif message == 'exit':
                     log.log("FunHomeTV-settings-run::receive exit",log.INFO)
                     self.stopped = True
+                elif message == 'certapplied':   #in reloadcmd add a message send .
+                    log.log("FunHomeTV-settings-run::receive message certapplied", log.INFO)
+                    threading.Thread(target=oe.certapplied).start()
+                    log.log("FunHomeTV-settings-run::after new thread of certapplied", log.INFO)
+                elif message == 'mounted':  #in vm , user specify the shared folder , and we mounted the folder for nextcloud or immich.
+                    log.log("FunHomeTV-settings-run::receive message mounted", log.INFO)
+                    threading.Thread(target=oe.foldermounted).start()
+                    log.log("FunHomeTV-settings-run::after start thread foldermounted", log.INFO)
+
                 log.log("FunHomeTV-settings-run::in loop-waiting",log.INFO)
             except Exception as e:
                 log.log("FunHomeTV-settings-run::except:"+repr(e),log.DEBUG)
@@ -89,8 +100,48 @@ class Service_Thread(threading.Thread):
         except Exception as e:
             log.log("FunHomeTV-settings-stop::except:"+repr(e),log.DEBUG)
 
+class ztstatus_thread(threading.Thread):
 
-class Monitor(xbmc.Monitor):
+    def __init__(self, oeMain):
+        try:
+            oeMain.dbg_log('ztstatus::__init__', 'enter_function', 4)
+            self.oe = oeMain
+            self.stopped = False
+            threading.Thread.__init__(self)
+            self.daemon = True
+            self.oe.dbg_log('ztstatus::__init__', 'exit_function', 4)
+        except Exception as e:
+            self.oe.dbg_log('ztstatus::__init__', 'ERROR: (' + repr(e) + ')')
+
+    def stop(self):
+        try:
+            self.oe.dbg_log('ztstatus::stop', 'enter_function', 0)
+            self.stopped = True
+            self.oe.dbg_log('ztstatus::stop', 'exit_function', 0)
+        except Exception as e:
+            self.oe.dbg_log('ztstatus::stop', 'ERROR: (' + repr(e) + ')')
+
+    def run(self):
+        try:
+            self.oe.dbg_log('ztstatus::run', 'enter_function', 0)
+            while self.stopped == False:
+                self.oe.dbg_log('ztstatus::run', 'call ztStatusRefresh', 1)
+                threading.Thread(target=self.oe.ztStatusRefresh).start()
+                self.oe.dbg_log('ztstatus::run', 'start sleep 60 seconds' , 1)
+                sleepcount = 0
+                while self.stopped == False and sleepcount < 60:
+                    time.sleep(1)
+                    sleepcount = sleepcount + 1
+                    if(sleepcount % 10 == 0):   
+                        threading.Thread(target=self.oe.check_host_share).start()
+            self.oe.dbg_log('ztstatus::run', 'exit_function', 0)
+        except Exception as e:
+            self.oe.dbg_log('ztstatus::run', 'ERROR: (' + repr(e) + ')')
+        
+
+
+
+class bMonitor(xbmc.Monitor):
 
     @log.log_function()
     def onScreensaverActivated(self):
@@ -105,12 +156,6 @@ class Monitor(xbmc.Monitor):
     @log.log_function()
     def run(self):
         try:
-            log.log("FunHomeTV-settings-monitor::enter",log.DEBUG)
-            dbus_utils.LOOP_THREAD.start()
-            oe.load_modules()
-            oe.start_service()
-            service_thread = Service_Thread()
-            service_thread.start()
             while not self.abortRequested():
                 if self.waitForAbort(60):
                     break
@@ -128,13 +173,6 @@ class Monitor(xbmc.Monitor):
                 if xbmc.getGlobalIdleTime() / 60 >= timeout:
                     log.log(f'Idle timeout reached', log.DEBUG)
                     oe.standby_devices()
-            if hasattr(oe, 'winOeMain') and hasattr(oe.winOeMain, 'visible'):
-                if oe.winOeMain.visible == True:
-                    oe.winOeMain.close()
-            oe.stop_service()
-            service_thread.stop()
-            dbus_utils.LOOP_THREAD.stop()
-            log.log("FunHomeTV-settings-monitor::exit",log.DEBUG)
         except Exception as e:
             log.log("FunHomeTV-settings-monitor::exception:"+repr(e),log.DEBUG)
 
@@ -142,5 +180,40 @@ class Monitor(xbmc.Monitor):
 
 if __name__ == '__main__':
     log.log("FunHomeTV-settings-main-monitor::enter",log.DEBUG)
-    Monitor().run()
+    #        log.log("FunHomeTV-settings-monitor::enter",log.DEBUG)
+    
+    oe.__oe__.dbg_log('FUNHOMETV service.py 1/6', 'ready to dbusthreadstart load-modules and start_service and monitor start', 0)
+
+    dbus_utils.LOOP_THREAD.start()
+    oe.load_modules()
+    oe.__oe__.dbg_log('FUNHOMETV service.py 2/6', 'after load_modules', 0)
+    oe.start_service()
+    oe.__oe__.dbg_log('FUNHOMETV service.py 3/6', 'after start_service,next bmonitor construct and xbmcm.run with service_thread', 0)
+    service_thread = Service_Thread()
+    service_thread.start()
+
+    #add a zerotier monitor thread for refresh every minute
+    ztmonitor = ztstatus_thread(oe.__oe__)
+    ztmonitor.start()
+
+    oe.__oe__.dbg_log('FUNHOMETV service.py 4/6','after start ztstatus',0)
+    xbmcm = bMonitor()
+    xbmcm.run()
+    #oe.__oe__.dbg_log('service.py 3.5/5', 'after xbmcm.run--bMonitor run,next xbmcm.waitForAbort', 0)
+    #xbmcm.start()
+    #xbmcm.waitForAbort()
+
+
+
+    oe.__oe__.dbg_log('FUNHOMETV service.py 5/6', 'after xbmcm.waitForAbort aka. xbmcm.run', 0)
+    if hasattr(oe, 'winOeMain') and hasattr(oe.winOeMain, 'visible'):
+        if oe.winOeMain.visible == True:
+            oe.winOeMain.close()
+
+    ztmonitor.stop()
+    oe.stop_service()
+    service_thread.stop()
+    dbus_utils.LOOP_THREAD.stop()
+    log.log("FUNHOMETV service.py 6/6  main-thread end",log.DEBUG)
+
     log.log("FunHomeTV-settings-main-monitor::exit",log.DEBUG)

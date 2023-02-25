@@ -26,6 +26,11 @@ class Agent(dbus_utils.Agent):
     @log.log_function()
     def __init__(self):
         super().__init__(BUS_NAME, PATH_AGENT)
+    
+    @log.log_function()
+    def __del__(self):
+        super().__del__(BUS_NAME, PATH_AGENT)
+
 
     def manager_register_agent(self):
         dbus_utils.call_method(
@@ -108,6 +113,32 @@ class Listener(object):
             path='/',
             name='PropertyChanged')
         dbus_utils.BUS.listen_signal(
+            interface=INTERFACE_TECHNOLOGY,
+            fallback=True,
+            func=self._on_technology_changed,
+            path='/',
+            name='PropertyChanged')
+
+    def __del__(self):
+        dbus_utils.BUS.unlisten_signal(
+            interface=INTERFACE_MANAGER,
+            fallback=True,
+            func=self._on_property_changed,
+            path='/',
+            name='PropertyChanged')
+        dbus_utils.BUS.unlisten_signal(
+            interface=INTERFACE_MANAGER,
+            fallback=True,
+            func=self._on_services_changed,
+            path='/',
+            name='ServicesChanged')
+        dbus_utils.BUS.unlisten_signal(
+            interface=INTERFACE_SERVICE,
+            fallback=True,
+            func=self._on_property_changed,
+            path='/',
+            name='PropertyChanged')
+        dbus_utils.BUS.unlisten_signal(
             interface=INTERFACE_TECHNOLOGY,
             fallback=True,
             func=self._on_technology_changed,

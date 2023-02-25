@@ -661,6 +661,31 @@ def openWizard():
     except Exception as e:
         dbg_log('oe::openWizard', f'ERROR: ({repr(e)})')
 
+def certapplied():
+    global winOeMain, __cwd__, __oe__, dictModules
+    try:
+        dictModules['system'].check_current_apply_status()
+        notify("FunHomeTV",_(36607))   #36607     msgid "The TLS certificate apply successed"
+    except Exception as e:
+        dbg_log('oe::openWizard', f'ERROR: ({repr(e)})')
+
+
+def foldermounted():
+    global winOeMain, __cwd__, __oe__, dictModules
+    try:
+        notify("FunHomeTV",_(36608))   #36608     msgid "The shared folder is mounted"
+    except Exception as e:
+        dbg_log('oe::foldermounted', f'ERROR: ({repr(e)})')
+
+def check_host_share():
+    try:
+        dbg_log('ztstatus::check_host_share', 'enter_function')
+        execute("/usr/bin/mount_shared_folder.sh")
+        dbg_log('ztstatus::check_host_share', 'leave_function')
+    except Exception as e:
+        dbg_log('oe::check_host_share', f'ERROR: ({repr(e)})')
+
+
 
 def openConfigurationWindow():
     global winOeMain, __cwd__, __oe__, dictModules, PIN
@@ -856,6 +881,7 @@ def load_modules():
   # # load funhometv configuration modules
 
     try:
+        dbg_log('oe::MAIN(loadingModules)','enter')
         global dictModules, __oe__, __cwd__, init_done
         for strModule in dictModules:
             dictModules[strModule] = None
@@ -875,6 +901,7 @@ def load_modules():
                             setattr(dictModules[module_name], key, getattr(defaults, module_name)[key])
             except Exception as e:
                 dbg_log('oe::MAIN(loadingModules)(strModule)', f'ERROR: ({repr(e)})')
+        dbg_log('oe::MAIN(loadingModules)','leave')
     except Exception as e:
         dbg_log('oe::MAIN(loadingModules)', f'ERROR: ({repr(e)})')
 
@@ -1061,7 +1088,9 @@ try:
             if ((jc['StatusCode'] == '200') and (not (len(jc['id']) == 0))):
                 FACTORY_STATUS = 'OK'
                 MACHINEID = jc['id']
-                dbg_log('oe::MAIN-factorystatus',' OK , id:' + MACHINEID)
+                fake_machineid="(hidden)"
+                #dbg_log('oe::MAIN-factorystatus',' OK , id:' + MACHINEID)
+                dbg_log('oe::MAIN-factorystatus',' OK , id:' + fake_machineid)
                 break
             else:
                 dbg_log('oe::MAIN-factorystatus', 'we reposted , but something wrong , content:' + repr(content))

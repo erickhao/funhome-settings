@@ -22,6 +22,7 @@ import shutil
 import urllib.request, urllib.error, urllib.parse
 from datetime import datetime
 import base64
+import dns.resolver
 
 
 from faker import Faker
@@ -32,6 +33,7 @@ import socket
 def get_ip_address():
  ip_address = ''
  s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+ # connect() for UDP doesn't send packets
  s.connect(("www.taobao.com",80))
  ip_address = s.getsockname()[0]
  s.close()
@@ -425,7 +427,11 @@ class system(modules.Module):
         #for display
         self.struct['ident']['settings']['hostname6']['value'] = oe.hostname6_2_funhomenic
         #get ip address and as if ipaddress from connman , because no matter wifi or ethernet, can be connected is needed.
-        oe.ipv4address_local = get_ip_address()
+        try:
+            oe.ipv4address_local = get_ip_address()
+        except Exception as e:
+            oe.dbg_log("FunHomeTV::system:load_values error ",repr(e))
+
         if (oe.ipaddress_from_zerotier == None):
             oe.ipv4address_2_funhomenic = oe.ipv4address_local
             oe.ipaddress_from_connman = True
@@ -436,14 +442,17 @@ class system(modules.Module):
         oe.last_ipv4a = oe.read_setting('system', 'last_ipv4a')
         oe.last_ipv6aaaa = oe.read_setting('system', 'last_ipv6aaaa')
         oe.funhomenic_serial = oe.read_setting('system', 'funhomenic_serial')
+
+        #if the serial >=1 means it should have registed, we should make a check by query dns server.
         #oe.write_setting('system', 'funhomenic_serial', oe.funhomenic_serial)
 
+        self.check_dnsreg_status()
         ########### certificate supplier
         value = oe.read_setting('system', 'issuer_set')
         if not value is None:
             self.struct['ident']['settings']['certificatesupplier']['value'] = value
         else:
-            self.struct['ident']['settings']['certificatesupplier']['value'] = "Let's Encrypt"
+            self.struct['ident']['settings']['certificatesupplier']['value'] = "ZeroSSL"
             #recorded in settings
             oe.write_setting('system', 'issuer_set', self.struct['ident']['settings']['certificatesupplier']['value']) 
         ### end of certificate supplier
@@ -922,18 +931,14 @@ class system(modules.Module):
     @log.log_function()
     def funhomenic(self):
         oe.dbg_log('system::funhomenic ipv4-ipv6-name-name6:',repr(oe.ipv4address_2_funhomenic) + '-' + repr(oe.ipv6address_2_funhomenic) + '-' +  repr(oe.hostname_2_funhomenic) + '-' + repr(oe.hostname6_2_funhomenic), log.DEBUG)
-        if(not self.need_funhomenic()):
-            oe.dbg_log('system::funhomenic',' not need funhomenic,exit_function', log.DEBUG)
-            return
-        oe.dbg_log('system::funhomenic','need funhomenic', log.DEBUG)
-
-
-
-
         if oe.ipv4address_2_funhomenic == None:
                 oe.ipv4address_2_funhomenic = '0.0.0.0'
         if oe.ipv6address_2_funhomenic == None:
                 oe.ipv6address_2_funhomenic = '0::1'
+        if(not self.need_funhomenic()):
+            oe.dbg_log('system::funhomenic',' not need funhomenic,exit_function', log.DEBUG)
+            return
+        oe.dbg_log('system::funhomenic','need funhomenic', log.DEBUG)
 
         #for display name6 and ipaddress(4/6)
         self.struct['ident']['settings']['hostname6']['value'] = oe.hostname6_2_funhomenic
@@ -971,8 +976,11 @@ class system(modules.Module):
                     return
             else:
                 oe.dbg_log('system::funhomenic',' NO MACHINEID try , get:out:'+ repr(readout2out) +' err:' + repr(readout2err), log.INFO)
-        
-        oe.dbg_log('system::funhomenic','MACHINEID '+repr(oe.MACHINEID), log.DEBUG)
+
+        fake_machineid="(hidden)"
+
+        #oe.dbg_log('system::funhomenic','MACHINEID '+repr(oe.MACHINEID), log.DEBUG)
+        oe.dbg_log('system::funhomenic','MACHINEID '+repr(fake_machineid), log.DEBUG)
         if(len(oe.MACHINEID)==0):
             return
         if(oe.ENV_DEVELOPMENT):
@@ -986,14 +994,27 @@ class system(modules.Module):
             urllib.parse.quote(oe.ipv6address_2_funhomenic),
             urllib.parse.quote(oe.hostname6_2_funhomenic)
         )
-        oe.dbg_log('system::funhomenic','nicurl:'+nicurl+',urldatastr:'+urldatastr, log.DEBUG)
+        fake_machineid="(hidden)"
+        urldatastr_hidden = "machineid=%s&a=%s&name=%s&aaaa=%s&name6=%s" %( 
+            urllib.parse.quote(fake_machineid) ,
+            urllib.parse.quote(oe.ipv4address_2_funhomenic),
+            urllib.parse.quote(oe.hostname_2_funhomenic),
+            urllib.parse.quote(oe.ipv6address_2_funhomenic),
+            urllib.parse.quote(oe.hostname6_2_funhomenic)
+        )
+        #oe.dbg_log('system::funhomenic','nicurl:'+nicurl+',urldatastr:'+urldatastr, log.DEBUG)
+        oe.dbg_log('system::funhomenic','nicurl:'+nicurl+',urldatastr:'+urldatastr_hidden, log.DEBUG)
         try:
             response = urllib.request.urlopen(nicurl,urldatastr.encode('utf-8'))
             content = response.read()
         except Exception as e:
+            #in order to archive HA effect , here should make some work for try at least 3 time.
             oe.dbg_log('system::funhomenic', 'ERROR: (' + repr(e) + ')')
+            self.struct['ident']['settings']['dnsreg']['value']= oe._(32335)   #32335" msgid "No"
+            oe.notify(oe._(32601),oe.hostname_2_funhomenic + '; '+ jc['Message']) # need insert 32601#'funhometvnic Failed' ok
+            return None
 
-        #in order to archive HA effect , here should make some work for try at least 3 time.
+        
         jc=json.loads(content)
         oe.dbg_log('system::funhomenic', 'jc:' + repr(jc) , 0)
         if jc['StatusCode'] == '200':
@@ -1077,12 +1098,12 @@ class system(modules.Module):
             oe.dbg_log('system::certificatesupplier','enter')
             self.current_set=oe.read_setting('system','issuer_set')
             if(self.current_set == None) or ((self.current_set!="Let's Encrypt") and (self.current_set!="ZeroSSL")):
-                set_issuer_cmd="/storage/.acme.sh/acme.sh --set-default-ca --server letsencrypt"
+                set_issuer_cmd="/storage/.acme.sh/acme.sh --set-default-ca --server zerossl"
                 cmdresult=subprocess.Popen([set_issuer_cmd],shell=True, stdin=subprocess.PIPE,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 cmdout=cmdresult.stdout.read()
                 oe.dbg_log('system::certapply', 'set issuer cmd:'+set_issuer_cmd+' out:' + repr(cmdout) , log.DEBUG)
-                oe.write_setting('system','issuer_set',"Let's Encrypt")
-                self.struct['ident']['settings']['certificatesupplier']['value']= "Let's Encrypt"
+                oe.write_setting('system','issuer_set',"ZeroSSL")
+                self.struct['ident']['settings']['certificatesupplier']['value']= "ZeroSSL"
             
             elif(self.current_set == "Let's Encrypt"):
                 set_issuer_cmd="/storage/.acme.sh/acme.sh --set-default-ca --server zerossl"
@@ -1156,8 +1177,9 @@ class system(modules.Module):
             #call acme.sh --issue -d last_hostname --dnsapi funhometv 
             cmdapplycert = "PDD_Token=\"" + oe.MACHINEID + "\" /storage/.acme.sh/acme.sh --issue -d " + oe.last_hostname + " --dns dns_funhometv --key-file /storage/.kodi/apache/etc/ssl/private/ssl-cert-snakeoil.key --fullchain-file /storage/.kodi/apache/etc/ssl/certs/ssl-cert-snakeoil.pem --reloadcmd /storage/.kodi/apache/reloadcmd.sh  --debug 3 > /storage/.kodi/apache/certapplylog.txt 2>&1 "
             #when acme.sh finished , store certificate and restart apache2 and tell user to scan the address with qrcode  to link with nextcloud client . This action is performed by a service in background , when ready display the qrcode to user. 
-            
-            oe.dbg_log('system::certapply', 'cmdapplycert:' + repr(cmdapplycert) , log.DEBUG)
+            fake_machineid="(hidden)"
+            cmdapplycert_hidden = "PDD_Token=\"" + fake_machineid + "\" /storage/.acme.sh/acme.sh --issue -d " + oe.last_hostname + " --dns dns_funhometv --key-file /storage/.kodi/apache/etc/ssl/private/ssl-cert-snakeoil.key --fullchain-file /storage/.kodi/apache/etc/ssl/certs/ssl-cert-snakeoil.pem --reloadcmd /storage/.kodi/apache/reloadcmd.sh  --debug 3 > /storage/.kodi/apache/certapplylog.txt 2>&1 "
+            oe.dbg_log('system::certapply', 'cmdapplycert:' + repr(cmdapplycert_hidden) , log.DEBUG)
             cmdresult=subprocess.Popen([cmdapplycert], shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             cmdout = cmdresult.stdout.read()
             oe.dbg_log('system::certapply', 'cmdapplycert out:' + repr(cmdout) , log.DEBUG)
@@ -1176,6 +1198,7 @@ class system(modules.Module):
     def displaynextcloudentry(self,listItem=None):
         try:
             oe.dbg_log('system::displaynextcloudentry','enter')
+            self.check_current_apply_status()
             if(self.struct['ident']['settings']['certificateapplydone']['value']== oe._(32334)):   #32334" msgid "Yes"
                 oe.dictModules['services'].nextcloud_link()
             oe.dbg_log('system::displaynextcloudentry','leave')
@@ -1195,10 +1218,10 @@ class system(modules.Module):
                 jc2=json.loads(fcont)
                 ash.close()
                 if (jc2['status']=='Complete'):
-                    oe.dbg_log('system::certapply','applied success')
+                    oe.dbg_log('system::check_current_apply_status','applied success')
                     self.struct['ident']['settings']['certificateapplydone']['value']= oe._(32334)   #32334" msgid "Yes"
                 else:
-                    oe.dbg_log('system::certapply','applied should start')
+                    oe.dbg_log('system::check_current_apply_status','applied should start')
                     #self.struct['ident']['settings']['certificateapplydone']['value']= oe._(32335)   #32335" msgid "No"
             oe.dbg_log('system::check_current_apply_status','leave')
         except Exception as e:
@@ -1217,4 +1240,21 @@ class system(modules.Module):
         except Exception as e:
             oe.dbg_log('system::displayapplylog', 'ERROR: (' + repr(e) + ')')
 
+    @log.log_function()   
+    def check_dnsreg_status(self):
+        try:
+            oe.dbg_log('system::check_dnsreg_status','enter')
+            current_name =self.struct['ident']['settings']['hostname']['value']
+            result = dns.resolver.query(current_name, 'A')
+            if(len(result)>=1):
+                oe.dbg_log('result is ',result[0].to_text())
+                oe.dbg_log('ipv4address_local is ',oe.ipv4address_local)
+                if (oe.ipv4address_local == result[0].to_text()):
+                    self.struct['ident']['settings']['dnsreg']['value']= oe._(32334)   #32334" msgid "Yes"
+            
+            #if something wrong , we just blank the result , means "unknown" , better than wrongly report "No"
+
+            oe.dbg_log('system::check_dnsreg_status','leave')
+        except Exception as e:
+            oe.dbg_log('system::check_dnsreg_status', 'ERROR: (' + repr(e) + ')')
            
