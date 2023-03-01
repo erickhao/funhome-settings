@@ -538,6 +538,13 @@ class wizard(xbmcgui.WindowXMLDialog):
                     oe.write_setting("system", "language", "")
                 else:
                     oe.write_setting("system", "language", str(lang_new))
+
+                #user selected language 
+                lang_str = 'SetGUILanguage(' + str(lang_new) + ')'
+                xbmc.executebuiltin(lang_str)
+                self.onInit()  #to change the headings and others.
+                #end change display new languuage 
+
                 self.getControl(self.wizWinTitle).setLabel(oe._(32300))  #32300 #msgid "Welcome to @DISTRONAME@"
                 self.set_wizard_title(oe._(32301))    #32301 #msgid "Welcome"
                 self.set_wizard_text(oe._(32302))    #32302 #msgid "This wizard will guide you through the process of setting up your new @DISTRONAME@ installation - setting your location, timezone and connecting you to the internet.[CR][CR]These settings can be changed later by navigating to Programs > @DISTRONAME@ Settings."
@@ -769,10 +776,10 @@ class wizard(xbmcgui.WindowXMLDialog):
                         #    if xbmc.getCondVisibility(f'System.HasAddon({lang_new})'):
                         #        break
                         #    oe.xbmcm.waitForAbort(0.5)
-                        if xbmc.getCondVisibility(f'System.HasAddon({lang_new})') == True:
+                        #if xbmc.getCondVisibility(f'System.HasAddon({lang_new})') == True:
                             xbmc.executebuiltin(f'SetGUILanguage({str(lang_new)})')
-                        else:
-                            oe.dbg_log(f'wizard::onClick({str(controlID)})', f"ERROR: Unable to switch language to: {lang_new}. Language addon is not installed.")
+                        #else:
+                            #oe.dbg_log(f'wizard::onClick({str(controlID)})', f"ERROR: Unable to switch language to: {lang_new}. Language addon is not installed.")
                     ### check certapplystatus , for 5 times , if ok tell user to link with nextcloud client on mobile , if failed tell how to check the conditions.
                     ### call nextcloud link to do the job
                     ### display qrcode to user to link the mobile and the device.
